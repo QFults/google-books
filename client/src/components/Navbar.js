@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap'
+import SignUpForm from './SignupForm'
+import LoginForm from './LoginForm'
 
-import Auth from '../utils/auth';
+import Auth from '../utils/auth'
 
 const AppNavbar = () => {
   // set modal display state
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <>
@@ -43,7 +43,8 @@ const AppNavbar = () => {
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
+        aria-labelledby='signup-modal'
+      >
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
@@ -71,7 +72,7 @@ const AppNavbar = () => {
         </Tab.Container>
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default AppNavbar;
+export default AppNavbar
