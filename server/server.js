@@ -14,6 +14,7 @@ const server = new ApolloServer({
   context: authMiddleware
 })
 
+server.applyMiddleware({ app })
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
@@ -23,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, 'client', 'build', 'index.html'))
+  res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'))
 })
 
 db.once('open', () => {
